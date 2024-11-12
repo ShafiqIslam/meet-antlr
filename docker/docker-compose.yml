@@ -1,0 +1,14 @@
+services:
+  meet-antlr:
+    container_name: meet-antlr
+    image: meet-antlr
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    build:
+      dockerfile: docker/Dockerfile
+      context: ../
+    working_dir: /opt/app
+    volumes:
+      - ../:/opt/app
+    command: bash -c "tail -f /dev/null"

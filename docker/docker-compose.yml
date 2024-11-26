@@ -11,4 +11,7 @@ services:
     working_dir: /opt/app
     volumes:
       - ../:/opt/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
     command: bash -c "tail -f /dev/null"
